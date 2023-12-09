@@ -1,0 +1,5 @@
+- id: prepare-prev-commit-msg
+  name: Prepare Previous Commit Message
+  entry: prepare_commit_msg
+  language: script
+  stages: [prepare-commit-msg]
