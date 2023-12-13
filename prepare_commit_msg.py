@@ -56,5 +56,5 @@ def prepare_commit_msg() -> None:
 
 
 if __name__ == "__main__":
-    if not is_rebasing() and not is_dotfiles_repo():
+    if not is_rebasing():
         prepare_commit_msg()
