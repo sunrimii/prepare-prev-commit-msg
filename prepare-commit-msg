@@ -5,6 +5,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from git import Repo
 
 
 def run(cmd: list[str]) -> str:
@@ -34,7 +35,7 @@ def read_codegpt_commit_title() -> str | None:
 
 
 def read_prev_commit_msg() -> str:
-    return run(["git", "log", "-1", "--pretty=%B"])
+    return Repo(".").head.commit.message
 
 
 def replace_title(codegpt_commit_title: str, prev_commit_msg: str) -> str:
